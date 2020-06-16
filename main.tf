@@ -81,6 +81,7 @@ resource "aws_iam_role_policy" "delivery_status_role_inline_policy" {
 resource "aws_s3_bucket" "delivery_status_bucket" {
   bucket = "${var.usage_report_s3_bucket}"
   acl    = "private"
+  force_destroy = true
 
   server_side_encryption_configuration {
     rule {
